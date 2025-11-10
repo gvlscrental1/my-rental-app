@@ -1,0 +1,54 @@
+# ===========================
+# Nested types
+# ===========================
+
+type Adult {
+  firstName: String!
+  lastName: String!
+  email: String
+  phone: String
+  ssn: String
+}
+
+type Household {
+  adults: Int!
+  children: Int!
+}
+
+type RentalHistory {
+  address: String
+  from: String
+  to: String
+  contactName: String
+  contactPhone: String
+  contactEmail: String
+}
+
+type EmploymentHistory {
+  employer: String
+  from: String
+  to: String
+  supervisorName: String
+  supervisorPhone: String
+  supervisorEmail: String
+}
+
+# ===========================
+# Main model
+# ===========================
+
+type TenantApplication @model
+  @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  adults: [Adult!]!
+  leaseTerm: String!
+  household: Household!
+  rentalHistory: [RentalHistory]
+  employmentHistory: [EmploymentHistory]
+  uploadedFiles: [String]
+
+  # DataStore / AppSync system fields for versioning
+  _version: Int
+  _lastChangedAt: AWSTimestamp
+  _deleted: Boolean
+}

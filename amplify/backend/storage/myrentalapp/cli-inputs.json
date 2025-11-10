@@ -1,0 +1,14 @@
+{
+  "resourceName": "myrentalapp",
+  "policyUUID": "dcd14bfb",
+  "bucketName": "myrentalapps3",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
