@@ -13,5 +13,7 @@
       "BuildCommand": "npm.cmd run-script build",
       "StartCommand": "npm.cmd run-script start"
     }
-  }
+  },
+  "providers": ["awscloudformation"],
+  "AmplifyAppId": "d3vp49y2i4kjof"
 }
